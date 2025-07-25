@@ -102,6 +102,7 @@ def scrape_jobs(
         scraped_data: JobResponse = scraper.scrape(scraper_input)
         cap_name = site.value.capitalize()
         site_name = "ZipRecruiter" if cap_name == "Zip_recruiter" else cap_name
+        site_name = "LinkedIn" if site_name == "Linkedin" else site_name
         create_logger(site_name).info(f"finished scraping")
         return site.value, scraped_data
 
